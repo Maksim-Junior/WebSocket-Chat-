@@ -18,7 +18,7 @@ html = """
         <ul id='messages'>
         </ul>
         <script>
-            var ws = new WebSocket("wss://echo.websocket.org");
+            var ws = new WebSocket("wss://web-socket-chat.herokuapp.com/ws/");
             ws.onmessage = function(event) {
                 var messages = document.getElementById('messages')
                 var message = document.createElement('li')
@@ -48,7 +48,7 @@ async def service():
     return {"ok": True}
 
 
-@app.websocket("/")
+@app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
     await websocket.accept()
     while True:

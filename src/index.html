@@ -14,7 +14,7 @@
         </ul>
         <script>
             var clientID = Date.now();
-            var ws = new WebSocket(`ws://localhost:8000/ws/${clientID}`);
+            var ws = new WebSocket(`ws://web-socket-chat.herokuapp.com//ws/${clientID}`);
 
             function processMessage(event) {
                 var messages = document.getElementById('messages')

@@ -43,6 +43,11 @@ async def get():
     return HTMLResponse(html)
 
 
+@app.get("/service")
+async def service():
+    return {"ok": True}
+
+
 @app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
     await websocket.accept()

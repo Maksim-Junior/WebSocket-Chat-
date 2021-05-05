@@ -48,7 +48,7 @@ async def service():
     return {"ok": True}
 
 
-@app.websocket("/ws")
+@app.websocket("/")
 async def websocket_endpoint(websocket: WebSocket):
     await websocket.accept()
     while True:
